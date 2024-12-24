@@ -1,0 +1,11 @@
+# gitignore.io
+kendirenv
+local_settings.py
+db.sqlite3
+*.pyc
+*.pot
+*.log
+kendirenv
+__pycache__/
+/static
+media
