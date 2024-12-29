@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs.apps.JobsConfig',
     'notes.apps.NotesConfig',
+    'markdown2',
+    'markdownx',
+    'pygments',
 ]
 
 MIDDLEWARE = [

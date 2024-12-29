@@ -23,7 +23,9 @@ import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', jobs.views.home, name='home'),
-    path('count', views.count, name='count'),
+    path('', views.home, name='home'),
+    path('jobs', jobs.views.home, name='jobs'),
+    #path('count', views.count, name='count'),
     path('note/', include('notes.urls')),
+    path('markdownx/', include('markdownx.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
