@@ -145,5 +145,7 @@ STATIC_URL = '/static/'
 
 try:
     from .local_settings import *
+    print('local_settings loaded.')
 except ImportError:
+    print('local_settings is NOT loaded!')
     pass
