@@ -5,6 +5,5 @@ db.sqlite3
 *.pyc
 *.pot
 *.log
-kendirenv
 __pycache__/
 /static
