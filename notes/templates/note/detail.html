@@ -24,7 +24,7 @@
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-lg petrolMavisi">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">(3l<)  Murat Kendir</a>
+      <a class="navbar-brand" href="{% url 'home' %}">(ºUº) Murat Kendir</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -51,40 +51,51 @@
       <div class="row row-cols-1">
         <div class="col">
           <div class="card shadow-sm">
-            {% if note.image.url != None  %}
-            <img src="{{ note.image.url }}"/>
-            {% else %}
-            <div style="font-size:1.5em !important;width:400px;height:300px;overflow:hidden;">
-              {{ note.expression|markdown_to_html|safe }}
+
+            <div class="bg-body-secondary">
+              <div class="row">
+                <div class="col text-center py-3">
+                  {% if note.image.url != None  %}
+                  <img src="{{ note.image.url }}" width=400px height=300px/>
+                  {% else %}
+                  <div style="font-size:1.5em !important;width:400px;height:300px;overflow:hidden;">
+                    {{ note.expression|markdown_to_html|safe }}
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="col text-start">
+                  <h5 class="card-text pt-3 pb-1"><a href="">{{ note.title }}</a></h5>
+                  <div class="card-text text-end px-3 pb-3"><small>{{ note.type_name }}</small></div>
+                  <div class="card-text bg-dark-subtle p-1 text-center">
+                    {% for tag in note.tags.all %}
+                    <div class="btn btn-outline-secondary btn-sm tag">
+                      {{ tag.name }}
+                    </div>
+                    {% endfor %}
+                  </div>
+                  <div class="card-text bg-body-secondary p-3">
+                  {{ note.content|markdown_to_html|safe }}
+                  </div>
+                </div>
+              </div>
             </div>
-            {% endif %}
-            <div class="card-body">
-            	<h5 class="card-text">
-                {{ note.type_name }} | 
-            		<a href="">
-            		{{ note.title }}
-            		</a>
-            	</h5>
-              <div class="card-text acikKahverengi">
-              {% for tag in note.tags.all %}
-              {{ tag }} | 
-              {% endfor %}
-              </div>
-              <div class="card-text">
-                {{ note.content|markdown_to_html|safe }}
-              </div>
+
+            <div class="card-body p-0">
+              <h5 class="card-text pt-3 pb-1 px-3">Note Text : </h5>
               <div class="card-text">
                 {{ note.body|markdown_to_html|safe }}
               </div>
-              <div class="card-text acikKahverengi">
+              <h5 class="card-text pt-3 pb-1 px-3">Simple Expression :</h5>
+              <div class="card-text bg-body-tertiary">
                 {{ note.expression|markdown_to_html|safe }}
               </div>
-              <div class="card-text">
+              <h5 class="card-text pt-3 pb-1 px-3">Sample Code :</h5>
+              <div class="card-text bg-secondary">
                 {{ note.example|markdown_to_html|safe  }}
               </div>
-              <small class="card-text float-end acikKahverengi">
+              <div class="card-text text-end p-1">
               	{{ note.pub_date_pretty }}
-              </small>
+              </div>
             </div>
           </div>
         </div>
@@ -93,7 +104,7 @@
   </div>
 </main>
 
-<footer class="Kahverengi py-5">
+<footer class="acikKahverengi py-5">
   <div class="container">
     <p class="float-end mb-1">
       <a href="#" class="btn2 my-1 float-end">Back to top</a>

@@ -37,7 +37,7 @@ class Note(models.Model):
         through="Relationship",
         through_fields=("note", "tag"),
     )
-    list = models.ForeignKey(List, models.SET_NULL, blank=True, null=True)
+    list_id = models.ForeignKey(List, models.SET_NULL, blank=True, null=True)
     file = models.FileField(upload_to='files/', blank=True)
 
     def __str__(self):

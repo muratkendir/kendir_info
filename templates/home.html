@@ -32,7 +32,7 @@
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-lg petrolMavisi">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">(3l<)  Murat Kendir</a>
+    <a class="navbar-brand" href="{% url 'home' %}">(ºUº) Murat Kendir</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -59,41 +59,39 @@
 
 <main>
 
-  <section class="py-5 text-center container" style="background-image:url('media/images/dersu_uzala.jpg');">
-    <div class="row py-lg-5">
+  <section class="py-5  container" style="background-image:url('media/images/dersu_uzala.jpg');">
+    <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h2 class="fw-light text-light">Murat Kendir's Knowledge "Basement"*.</h2>
+        <h2 class="fw-light text-center text-light">Murat Kendir's Knowledge "Basement"*.</h2>
 
-        <p class="lead text-light">Dersu Uzala : We found a hut and dry wood here. Others will come. Give them rice, salt and matches, Captain.</p>
-        <p>
+        <p class="lead text-light text-center">"We found a hut and dry wood here. Others will come. Give them rice, salt and matches, Captain."</p>
+        <p class="text-light text-end">from the movie "Dersu Uzala", Akira Kurosawa, 1971</p>
+        <div class="shadow-sm">
           <a href="mailto:muratkendir@gmail.com" class="btn2 btn-primary my-1 float-end">Email me</a>
-        </p>
+        </div>
       </div>
     </div>
   </section>
-  <div class="album py-5 acikKahverengi">
-    <div class="container">
-		<h2 class="fw-light">Latest Jobs</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for job in last_jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="{{ job.image.url }}"/>
-            <div class="card-body">
-              <p class="card-text">
-                {{ job.only_year }} | {{ job.duty }}
-              </p>
-              <p class="card-text">
-                {{ job.mission }}
-              </p>
-              <p class="card-text float-end">
-                {{ job.location }}
-              </p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+  <div class="album py-5 bg-body-secondary">
+    <div class="container px-3">
+		<h2 class="fw-light">Who am i?</h2>
+    <p class="fw-light">Murat Kendir.</p>
+    <p class="card-text">I was born in Germany and spent my youth and most of my professional career in Turkey. I completed a Bachelor's degree in Geomatics Engineering and a Master's degree in Geographic Information Technology at Istanbul Technical University. I have gained work experience in both practical and information technology fields. I am currently working as a researcher at the Technical University of Munich. I am married and have one child.</p>
+    <p class="card-text">In many of my other interests I like to remain an amateur. I believe in learning to learn. Living is a serious business. But there should always be time for good music or a good coffee.</p>
+    </div>
+  </div>
+  <div class="album py-5 bg-dark-subtle">
+    <div class="container px-3">
+    <h2 class="fw-light">What is the purpose?</h2>
+    <div class="fw-light">
+      <ul>
+        <li>organizing my knowledge/information/data</li>
+          <ul>
+            <li> to be more nerd about these things.</li>
+          </ul>
+        <li>That's all. Enjoy the website!</li>
+      </ul>
+    </div>
     </div>
   </div>
 
@@ -126,7 +124,7 @@
   </div>
 </main>
 
-<footer class="Kahverengi py-5">
+<footer class="acikKahverengi py-5">
   <div class="container">
     <p>
       <a href="#" class="btn2 my-1 float-end">Back to top</a>
