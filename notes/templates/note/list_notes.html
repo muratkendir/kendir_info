@@ -81,7 +81,7 @@
 
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
-		<h2>Latest Notes</h2>
+		<h3>Notes of the List : </h3>
 		<hr/>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for note in notes.all %}
@@ -97,7 +97,7 @@
             <div class="card-body">
             	<h5 class="card-text">
                 {{ note.type_name }} | 
-            		<a href="{{ note.id }}">
+            		<a href="{% url 'allnotes' %}{{ note.id }}">
             		{{ note.title }}
             		</a>
             	</h5>

@@ -98,7 +98,7 @@
             <div class="card-body">
             	<h5 class="card-text">
                 {{ note.type_name }} | 
-            		<a href="{{ note.id }}">
+            		<a href="{% url 'allnotes' %}{{ note.id }}">
             		{{ note.title }}
             		</a>
             	</h5>
